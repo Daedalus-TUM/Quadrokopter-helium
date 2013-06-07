@@ -1,14 +1,20 @@
 // Measurements of the Kopter(cm):
 
 //radius of the balloon
-outer_radius = 75/2;
+outer_radius = 70/2;
 //thickness of carbon ring
 thickness = 0.1;
 //height of the carbon ring (= width of carbon band)
 height = 1;  // 0.94 measured
 //factor for increasing thickness
 strength = 0.1;
+
+//rotor radius
+rotor_r = 4.1;
 angle= 20;
+
+//openscad settings
+$fn=100;
 
 
 //from: http://www.thingiverse.com/thing:34027

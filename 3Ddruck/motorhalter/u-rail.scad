@@ -10,6 +10,6 @@ module u_shape(thickness, height, strength)
 
 module u_rail(angle, outer_radius, thickness, height, strength)
 {
-	partial_rotate_extrude(angle, outer_radius, 10, $fn=200)u_shape(thickness, height, strength);
+	partial_rotate_extrude(angle, outer_radius, 15)u_shape(thickness, height, strength);
 }
 

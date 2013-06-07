@@ -6,12 +6,17 @@ outer_radius = 70/2;
 thickness = 0.1;
 //height of the carbon ring (= width of carbon band)
 height = 1;  // 0.94 measured
-//factor for increasing thickness
-strength = 0.1;
-
 //rotor radius
 rotor_r = 4.1;
-angle= 20;
+
+// motor holder parameters
+
+//angle covered by one motor holder
+angle= 15;
+//factor for increasing thickness
+rail_strength = 0.1;
+//radius of arms holding motors
+arm_strength = 0.4;
 
 //openscad settings
 $fn=100;

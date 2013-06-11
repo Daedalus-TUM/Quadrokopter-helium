@@ -30,8 +30,13 @@ module v_arms(outer_radius, rotor_r, arm_strength, angle)
 	gamma = atan(be/ce);
 	length = bc + 4*arm_strength;  
 		//add arm_strength so arms completely intercect with large circle
-	rotate ([0,gamma,0])cylinder(h = length, r= arm_strength);
-	rotate ([0,-gamma,0])cylinder(h = length, r= arm_strength);
+    delta_h= arm_strength/(sin(gamma));
+ 	translate([0, 0, delta_h])
+	rotate ([0,gamma,0])
+	cylinder(h = length, r= arm_strength);
+	translate([0, 0, delta_h])
+	rotate ([0,-gamma,0])
+	cylinder(h = length, r= arm_strength);
 }
 
 

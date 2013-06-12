@@ -10,7 +10,7 @@ thickness = 0.1;
 //height of the carbon ring (= width of carbon band)
 height = 1;  // 0.94 measured
 //rotor radius
-rotor_r = 4.1;
+rotor = 4.1;
 
 // motor holder parameters
 
@@ -19,6 +19,7 @@ motor_height = 0.55;
 motor_radius = 0.5 * 0.32;
 motor_drill = 0.25;
 motor_wires = 0.45;
+wire_cutout = motor_height - motor_drill;
 
 //parameters for motor ring
 ring_thickness = 0.3;
@@ -29,17 +30,21 @@ angle= 15;
 rail_strength = 0.1;
 //radius of arms holding motors
 arm_strength = 0.4;
+//distance for rotors needs to include motor_radius and ring_thickness
+//to make sure the motor ring is where the arms meet
+rotor_r = rotor + motor_radius + ring_thickness;
 
 // calculation of lengths, angles for motor arms
 betta = 90 - angle/2;   			//angle = alpha
 be = cos(betta) * outer_radius;	//outer_radius = r_Kopter
 fe = outer_radius * (1 -cos(angle/2));
-ce = rotor_r + fe;
+ce = rotor_r + fe; //
 bc = sqrt(ce*ce + be*be);
 gamma = atan(be/ce);
 length = bc + 4*arm_strength;  
 //add arm_strength so arms completely intercect with large circle
-delta_h= arm_strength/(sin(gamma));
+delta_h= arm_strength/(sin(gamma)); 
+
 
 
 

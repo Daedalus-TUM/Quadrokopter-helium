@@ -20,11 +20,21 @@ rail_thickness = thickness + 0.2;
 rail_radius = outer_radius - rail_thickness;
 
 
-//union(){
+union(){
 	translate([rail_thickness/2, 0, 0])
 	u_rail(angle, outer_radius, rail_thickness, rail_height, rail_strength);
 
-	translate([rail_thickness/2 + rail_strength, 0, height/2])
-	rotate([90, 0, 90])
-	motor_arm(outer_radius, rotor_r, arm_strength, angle);
-//}
+	difference()
+	{
+		translate([rail_thickness/2 + rail_strength, 0, height/2])
+		rotate([90, 0, 90])
+		motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength);
+
+		translate([rotor_r-arm_strength, 0, rail_strength])
+		motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength);
+	}
+
+	translate([rotor_r-arm_strength, 0, rail_strength])
+	motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength);
+}
+

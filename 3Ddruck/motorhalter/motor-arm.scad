@@ -1,6 +1,6 @@
 include <general-functions.scad>;
 
-module motor_arm(outer_radius, rotor_r, arm_strength, angle)
+module motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength)
 //add motor arms to circle at given radius
 //circle goes through (0,0,0)
 //angle between arms is calculated so they mark the area of the circle,
@@ -10,7 +10,7 @@ module motor_arm(outer_radius, rotor_r, arm_strength, angle)
 	{
 		translate([0,0,rotor_r])
 		rotate([180,0,0])
-		v_arms(outer_radius, rotor_r, arm_strength, angle);
+ 		v_arms(delta_h, gamma, length, arm_strength);
 		rotate([90,0,0])
 		translate([0, -outer_radius-0.1, -3])
 		//translate a bit further to make sure part connects well with other parts
@@ -19,7 +19,7 @@ module motor_arm(outer_radius, rotor_r, arm_strength, angle)
 }
 
 
-module v_arms(outer_radius, rotor_r, arm_strength, angle)
+module v_arms(delta_h, gamma, length, arm_strength)
 //construct motor arms with correct angles, lenths
 {
 
@@ -32,5 +32,4 @@ module v_arms(outer_radius, rotor_r, arm_strength, angle)
 }
 
 
-//v_arms(outer_radius, rotor_r, arm_strength, angle);
-motor_arm(outer_radius, rotor_r, arm_strength, angle);
+motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength);

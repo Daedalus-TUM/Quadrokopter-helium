@@ -6,19 +6,25 @@ include <general-functions.scad>;
 //	rotate ([0,-gamma,0])
 //	cylinder(h = length, r= arm_strength);
 
-difference()
+motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength);
+
+module motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength)
 {
-	cylinder(h= motor_height, r = ring_thickness + motor_radius);
-	motor_cutout(motor_height, motor_radius, motor_wires, motor_drill);
+	difference()
+	{
+		cylinder(h= 2*arm_strength, r = ring_thickness + motor_radius);
+		motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength);
+	}
 }
 
-module motor_cutout(motor_height, motor_radius, motor_wires, motor_drill)
+module motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength)
 {
-	cylinder(h= motor_height, r= motor_radius);
+	translate([0, 0, -0.1])
+	cylinder(h= 2* arm_strength + 0.2, r= motor_radius);
 	//cutout for wires
-	translate([0, 0, motor_drill])
+	translate([0, 0, 2*arm_strength - wire_cutout])
 	rotate([0, 90, 0])
-	linear_extrude(height = motor_wires - motor_radius, center = false, convexity = 10, twist = 0)
+	linear_extrude(height = wire_cutout, center = false, convexity = 10, twist = 0)
 	translate([-2*motor_radius, -motor_radius, 0])
 	square(2*motor_radius);
 }

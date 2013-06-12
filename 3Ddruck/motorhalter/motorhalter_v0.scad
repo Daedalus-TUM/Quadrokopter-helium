@@ -2,6 +2,7 @@ include <general-functions.scad>;
 use <u-rail.scad>;
 use <kopter-ring.scad>;
 use <motor-arm.scad>;
+use <motor-ring.scad>;
 
 //x, y plane where the printer head moves
 // z > 0 !!!

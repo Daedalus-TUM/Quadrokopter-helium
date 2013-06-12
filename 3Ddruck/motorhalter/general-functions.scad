@@ -18,7 +18,7 @@ rotor_r = 4.1;
 motor_height = 0.55;
 motor_radius = 0.5 * 0.32;
 motor_drill = 0.25;
-motor_wires = 0.53;
+motor_wires = 0.45;
 
 //angle covered by one motor holder
 angle= 15;

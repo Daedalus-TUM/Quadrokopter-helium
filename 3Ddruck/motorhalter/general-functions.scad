@@ -1,8 +1,9 @@
 //openscad settings
 $fn=100;
 
+// M
 // Measurements of the Kopter(cm):
-
+// M
 //radius of the balloon
 outer_radius = 70/2;
 //thickness of carbon ring
@@ -14,19 +15,22 @@ rotor = 4.1;
 
 // motor holder parameters
 
+//M
 //motor measurements
+//M
 motor_height = 0.55;
 motor_radius = 0.5 * 0.32;
 motor_drill = 0.25;
 motor_wires = 0.45;
 wire_cutout = motor_height - motor_drill;
 
+// P
 //parameters for motor ring
+// P
 ring_thickness = 0.3;
-
 //angle covered by one motor holder
 angle= 15;
-//factor for increasing thickness
+//factor for increasing thickness of rail
 rail_strength = 0.1;
 //radius of arms holding motors
 arm_strength = 0.4;
@@ -34,7 +38,9 @@ arm_strength = 0.4;
 //to make sure the motor ring is where the arms meet
 rotor_r = rotor + motor_radius + ring_thickness;
 
+// C
 // calculation of lengths, angles for motor arms
+// C
 betta = 90 - angle/2;   			//angle = alpha
 be = cos(betta) * outer_radius;	//outer_radius = r_Kopter
 fe = outer_radius * (1 -cos(angle/2));

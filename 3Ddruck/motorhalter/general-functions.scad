@@ -20,6 +20,9 @@ motor_radius = 0.5 * 0.32;
 motor_drill = 0.25;
 motor_wires = 0.45;
 
+//parameters for motor ring
+ring_thickness = 0.3;
+
 //angle covered by one motor holder
 angle= 15;
 //factor for increasing thickness

@@ -52,6 +52,13 @@ length = bc + 4*arm_strength;
 delta_h= arm_strength/(sin(gamma)); 
 
 
+//M
+//Screw Measurements
+//M
+//M2 screw, for better hold decrease slightly
+screw_diameter = 0.2;
+//smalles diameter of nut
+nut = 0.4;
 
 
 //from: http://www.thingiverse.com/thing:34027

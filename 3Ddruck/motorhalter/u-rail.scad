@@ -1,6 +1,6 @@
 include <general-functions.scad>;
 
-u_rail(angle, outer_radius, thickness, height, strength);
+u_rail(angle, outer_radius, thickness, height, rail_strength);
 
 
 module u_shape(thickness, height, strength)
@@ -10,6 +10,8 @@ module u_shape(thickness, height, strength)
 
 module u_rail(angle, outer_radius, thickness, height, strength)
 {
+	translate([-outer_radius-strength-thickness, 0, 0])
+	rotate([0, 0, -angle/2])
 	partial_rotate_extrude(angle, outer_radius, 15)u_shape(thickness, height, strength);
 }
 

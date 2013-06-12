@@ -12,9 +12,9 @@ module motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength)
 		rotate([180,0,0])
  		v_arms(delta_h, gamma, length, arm_strength);
 		rotate([90,0,0])
-		translate([0, -outer_radius-0.1, -3])
+		translate([0, -outer_radius-1, -30])
 		//translate a bit further to make sure part connects well with other parts
-		cylinder(h = 6, r= outer_radius);
+		cylinder(h = 60, r= outer_radius);
 	}
 }
 

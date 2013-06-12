@@ -8,7 +8,7 @@ use <motor-ring.scad>;
 // z > 0 !!!
 // in cm
 
-translate([-outer_radius, 0, rail_strength])kopter_ring(outer_radius, thickness, height);
+//translate([-outer_radius, 0, rail_strength])kopter_ring(outer_radius, thickness, height);
 
 //rail
 

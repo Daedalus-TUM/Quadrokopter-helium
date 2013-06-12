@@ -2,38 +2,38 @@
 $fn=100;
 
 // M
-// Measurements of the Kopter(cm):
+// Measurements of the Kopter(mm):
 // M
 //radius of the balloon
-outer_radius = 70/2;
+outer_radius = 700/2;
 //thickness of carbon ring
-thickness = 0.1;
+thickness = 1;
 //height of the carbon ring (= width of carbon band)
-height = 1;  // 0.94 measured
+height = 10;  // 0.94 measured
 //rotor radius
-rotor = 4.1;
+rotor = 41;
 
 // motor holder parameters
 
 //M
 //motor measurements
 //M
-motor_height = 0.55;
-motor_radius = 0.5 * 0.32;
-motor_drill = 0.25;
-motor_wires = 0.45;
+motor_height = 5.5;
+motor_radius = 5 * 0.32;
+motor_drill = 2.5;
+motor_wires = 4.5;
 wire_cutout = motor_height - motor_drill;
 
 // P
 //parameters for motor ring
 // P
-ring_thickness = 0.3;
+ring_thickness = 3;
 //angle covered by one motor holder
 angle= 15;
 //factor for increasing thickness of rail
-rail_strength = 0.1;
+rail_strength = 1;
 //radius of arms holding motors
-arm_strength = 0.4;
+arm_strength = 4;
 //distance for rotors needs to include motor_radius and ring_thickness
 //to make sure the motor ring is where the arms meet
 rotor_r = rotor + motor_radius + ring_thickness;
@@ -56,9 +56,9 @@ delta_h= arm_strength/(sin(gamma));
 //Screw Measurements
 //M
 //M2 screw, for better hold decrease slightly
-screw_diameter = 0.2;
+screw_diameter = 2;
 //smalles diameter of nut
-nut = 0.4;
+nut = 4;
 
 
 //from: http://www.thingiverse.com/thing:34027

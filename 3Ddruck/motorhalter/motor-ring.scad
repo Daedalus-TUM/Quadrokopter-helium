@@ -40,9 +40,9 @@ module motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength)
 
 module cut_ring(arm_strength)
 {
-	translate([0, -0.05, -0.5])
-	linear_extrude(height = 2, center = false, convexity = 10, twist = 0)
-	square([2, 0.1]);
+	translate([0, -0.5, -5])
+	linear_extrude(height = 20, center = false, convexity = 10, twist = 0)
+	square([20, 1]);
 }	
 
 module screw_fastener(motor_radius, ring_thickness, nut, arm_strength, motor_wires)
@@ -52,11 +52,11 @@ module screw_fastener(motor_radius, ring_thickness, nut, arm_strength, motor_wir
 	difference()
 	{
 		rotate([90, 0, 0])
-		translate([motor_radius+ring_thickness+nut, arm_strength, -0.15]) 
-		cylinder (h= 0.3, r= nut + wire_ring, center= false);  
+		translate([motor_radius+ring_thickness+nut, arm_strength, -1.5]) 
+		cylinder (h= 3, r= nut + wire_ring, center= false);  
 
 		rotate([90, 0, 0])
-		translate([motor_radius+ring_thickness+nut, arm_strength, -0.15]) 
-		cylinder (h= 0.3, r= screw_diameter, center= false);  
+		translate([motor_radius+ring_thickness+nut, arm_strength, -1.5]) 
+		cylinder (h= 3, r= screw_diameter, center= false);  
 	}
 }

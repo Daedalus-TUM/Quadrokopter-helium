@@ -8,14 +8,21 @@ include <general-functions.scad>;
 
 motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength);
 //cut_ring();
+//screw_fastener(motor_radius, ring_thickness, nut, arm_strength, motor_wires);
 
 module motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength)
 {
 	difference()
 	{
+		union()
+		{
 		cylinder(h= 2*arm_strength, r = ring_thickness + motor_radius);
+		screw_fastener(motor_radius, ring_thickness, nut, arm_strength, motor_wires);
+		}
+
 		motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength);
-		cut_ring();
+
+		cut_ring(arm_strength);
 	}
 }
 
@@ -31,15 +38,25 @@ module motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength)
 	square(2*motor_radius);
 }
 
-module cut_ring()
+module cut_ring(arm_strength)
 {
-	translate([0, -0.05, 0])
-	linear_extrude(height = 2* arm_strength + 0.2, center = false, convexity = 10, twist = 0)
-	translate([0, 0, 0])
-	square([3*arm_strength, 0.1]);
+	translate([0, -0.05, -0.5])
+	linear_extrude(height = 2, center = false, convexity = 10, twist = 0)
+	square([2, 0.1]);
 }	
 
-//module screw_closer()
-//{
+module screw_fastener(motor_radius, ring_thickness, nut, arm_strength, motor_wires)
+{
+	//thickness of motor ring where motor wires go:
+	wire_ring = ring_thickness - motor_wires + 2*motor_radius; 
+	difference()
+	{
+		rotate([90, 0, 0])
+		translate([motor_radius+ring_thickness+nut, arm_strength, -0.15]) 
+		cylinder (h= 0.3, r= nut + wire_ring, center= false);  
 
-//}
+		rotate([90, 0, 0])
+		translate([motor_radius+ring_thickness+nut, arm_strength, -0.15]) 
+		cylinder (h= 0.3, r= screw_diameter, center= false);  
+	}
+}

@@ -1,3 +1,6 @@
+//openscad settings
+$fn=100;
+
 // Measurements of the Kopter(cm):
 
 //radius of the balloon
@@ -18,8 +21,17 @@ rail_strength = 0.1;
 //radius of arms holding motors
 arm_strength = 0.4;
 
-//openscad settings
-$fn=100;
+// calculation of lengths, angles for motor arms
+betta = 90 - angle/2;   			//angle = alpha
+be = cos(betta) * outer_radius;	//outer_radius = r_Kopter
+fe = outer_radius * (1 -cos(angle/2));
+ce = rotor_r + fe;
+bc = sqrt(ce*ce + be*be);
+gamma = atan(be/ce);
+length = bc + 4*arm_strength;  
+//add arm_strength so arms completely intercect with large circle
+delta_h= arm_strength/(sin(gamma));
+
 
 
 //from: http://www.thingiverse.com/thing:34027

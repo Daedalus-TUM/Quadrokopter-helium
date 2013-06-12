@@ -20,17 +20,9 @@ module motor_arm(outer_radius, rotor_r, arm_strength, angle)
 
 
 module v_arms(outer_radius, rotor_r, arm_strength, angle)
-//construct right angles, lengths for motor arms
+//construct motor arms with correct angles, lenths
 {
-	betta = 90 - angle/2;   			//angle = alpha
-	be = cos(betta) * outer_radius;	//outer_radius = r_Kopter
-	fe = outer_radius * (1 -cos(angle/2));
-	ce = rotor_r + fe;
-	bc = sqrt(ce*ce + be*be);
-	gamma = atan(be/ce);
-	length = bc + 4*arm_strength;  
-		//add arm_strength so arms completely intercect with large circle
-    delta_h= arm_strength/(sin(gamma));
+
  	translate([0, 0, delta_h])
 	rotate ([0,gamma,0])
 	cylinder(h = length, r= arm_strength);

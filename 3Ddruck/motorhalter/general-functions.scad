@@ -14,6 +14,12 @@ rotor_r = 4.1;
 
 // motor holder parameters
 
+//motor measurements
+motor_height = 0.55;
+motor_radius = 0.5 * 0.32;
+motor_drill = 0.25;
+motor_wires = 0.53;
+
 //angle covered by one motor holder
 angle= 15;
 //factor for increasing thickness

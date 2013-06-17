@@ -9,9 +9,11 @@ outer_radius = 700/2;
 //thickness of carbon ring
 thickness = 1;
 //height of the carbon ring (= width of carbon band)
-height = 10;  // 0.94 measured
+// increased by 1mm to account for printer errors
+height = 11;  // 0.94 measured
 //rotor radius
-rotor = 41;
+//increased by 1cm from 41 to 51, to give rotors some space
+rotor = 51;
 
 // motor holder parameters
 
@@ -19,7 +21,8 @@ rotor = 41;
 //motor measurements
 //M
 motor_height = 5.5;
-motor_radius = 5 * 0.32;
+motor_radius = 0.5 * 4.2; 
+//increased from 3.2 to 4.2 so motor fits with PLA2 slic3r settings
 motor_drill = 2.5;
 motor_wires = 4.5;
 wire_cutout = motor_height - motor_drill;

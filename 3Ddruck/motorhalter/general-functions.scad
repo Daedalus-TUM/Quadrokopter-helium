@@ -21,8 +21,8 @@ rotor = 51;
 //motor measurements
 //M
 motor_height = 5.5;
-motor_radius = 0.5 * 4.2; 
-//increased from 3.2 to 4.2 so motor fits with PLA2 slic3r settings
+motor_radius = 0.5 * 3.5; 
+//increased from 3.2 to 3.5 so motor fits with slic3r settings
 motor_drill = 2.5;
 motor_wires = 4.5;
 wire_cutout = motor_height - motor_drill;
@@ -36,7 +36,7 @@ angle= 15;
 //factor for increasing thickness of rail
 rail_strength = 1;
 //radius of arms holding motors
-arm_strength = 4;
+arm_strength = 3;
 //distance for rotors needs to include motor_radius and ring_thickness
 //to make sure the motor ring is where the arms meet
 rotor_r = rotor + motor_radius + ring_thickness;

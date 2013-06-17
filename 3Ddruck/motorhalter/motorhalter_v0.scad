@@ -19,17 +19,17 @@ rail_thickness = thickness + 0.2;
 //rails rotate around inner radius
 rail_radius = outer_radius - rail_thickness;
 
-module motorhalter(angle, heigth, outer_radius, rail_thickness, rail_height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill)
+module motorhalter(angle, heigth, outer_radius, rail_thickness, height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill)
 {
 	union(){
 		translate([rail_thickness/2, 0, 0])
-		u_rail(angle, outer_radius, rail_thickness, rail_height, rail_strength);
+		u_rail(angle, outer_radius, rail_thickness, height, rail_strength);
 
 		difference()
 		{
 			translate([rail_thickness/2 + rail_strength, 0, height/2 - rail_strength])
 			rotate([90, 0, 90])
-			motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength);
+			motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength, height);
 
 			//translate([rotor_r - arm_strength, 0, rail_strength])
 			translate([rotor_r - motor_radius - ring_thickness, 0, 0])
@@ -46,7 +46,7 @@ module motorhalter(angle, heigth, outer_radius, rail_thickness, rail_height, rai
 // translate so important parts are _not_ cut off
 difference()
 {
-motorhalter(angle, height, outer_radius, rail_thickness, rail_height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill);
+motorhalter(angle, height, outer_radius, rail_thickness, height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill);
 
 translate([0, 0, -1])
 cube(size = [220, 220, 2] ,center = true);

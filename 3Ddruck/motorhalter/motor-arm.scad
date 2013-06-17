@@ -59,4 +59,6 @@ module v_arms(delta_h, gamma, length, arm_strength)
 	}
 }
 
+
+//v_arms(delta_h, gamma, length, arm_strength);
 motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength);

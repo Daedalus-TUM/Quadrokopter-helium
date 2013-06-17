@@ -52,11 +52,11 @@ module screw_fastener(motor_radius, ring_thickness, nut, arm_strength, motor_wir
 	difference()
 	{
 		rotate([90, 0, 0])
-		translate([motor_radius+ring_thickness+nut, arm_strength, -1.5]) 
-		cylinder (h= 3, r= nut + wire_ring, center= false);  
+		translate([motor_radius+ring_thickness+nut/2, arm_strength, -1.5]) 
+		cylinder (h= 3, r= nut/2 + wire_ring, center= false);  //nut is a diameter
 
 		rotate([90, 0, 0])
-		translate([motor_radius+ring_thickness+nut, arm_strength, -1.5]) 
-		cylinder (h= 3, r= screw_diameter, center= false);  
+		translate([motor_radius+ring_thickness+nut/2, arm_strength, -1.5]) 
+		cylinder (h= 3, r= screw_diameter/2, center= false);  
 	}
 }

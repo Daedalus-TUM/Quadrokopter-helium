@@ -19,17 +19,44 @@ module motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength)
 }
 
 
-module v_arms(delta_h, gamma, length, arm_strength)
-//construct motor arms with correct angles, lenths
+module v_arms_round(delta_h, gamma, length, arm_strength)
+//construct round part of motor arms with correct angles, lenths
 {
 
  	translate([0, 0, delta_h])
 	rotate ([0,gamma,0])
 	cylinder(h = length, r= arm_strength);
+
 	translate([0, 0, delta_h])
 	rotate ([0,-gamma,0])
 	cylinder(h = length, r= arm_strength);
 }
 
+module v_arms_square(delta_h, gamma, length, arm_strength)
+
+//construct square part of motor arms with correct angles, lenths
+{
+
+	rotate ([0,gamma,0])
+ 	translate([-2*arm_strength, 0, 0.75*delta_h])  //factor 0.75 is jsut an estimate...
+	linear_extrude(height = length, center = false, convexity = 10, twist = 0)
+	square([2* arm_strength, arm_strength]);
+
+	rotate ([0,-gamma,0])
+	translate([0, 0, 0.75*delta_h])   //factor 0.75 is jsut an estimate...
+	linear_extrude(height = length, center = false, convexity = 10, twist = 0)
+	square([2* arm_strength, arm_strength]);
+}
+
+
+module v_arms(delta_h, gamma, length, arm_strength)
+//put round and square arms together
+{
+	union()
+	{
+		v_arms_round(delta_h, gamma, length, arm_strength);
+		v_arms_square(delta_h, gamma, length, arm_strength);
+	}
+}
 
 motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength);

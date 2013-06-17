@@ -46,7 +46,7 @@ module motorhalter(angle, heigth, outer_radius, rail_thickness, rail_height, rai
 // translate so important parts are _not_ cut off
 difference()
 {
-motorhalter(angle, heigth, outer_radius, rail_thickness, rail_height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill);
+motorhalter(angle, height, outer_radius, rail_thickness, rail_height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill);
 
 translate([0, 0, -1])
 cube(size = [220, 220, 2] ,center = true);

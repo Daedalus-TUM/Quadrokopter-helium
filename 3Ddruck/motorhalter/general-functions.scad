@@ -21,8 +21,9 @@ rotor = 51;
 //motor measurements
 //M
 motor_height = 5.5;
-motor_radius = 0.5 * 3.5; 
+motor_radius = 0.5 * 3.8; 
 //increased from 3.2 to 3.5 so motor fits with slic3r settings
+//3.5 too small - let's try 3.8
 motor_drill = 2.5;
 motor_wires = 4.5;
 wire_cutout = motor_height - motor_drill;
@@ -36,7 +37,9 @@ angle= 15;
 //factor for increasing thickness of rail
 rail_strength = 1;
 //radius of arms holding motors
-arm_strength = 3;
+arm_strength = 2;
+//was 4, 3 both are strong, stable
+
 //distance for rotors needs to include motor_radius and ring_thickness
 //to make sure the motor ring is where the arms meet
 rotor_r = rotor + motor_radius + ring_thickness;

@@ -37,14 +37,19 @@ module v_arms_square(delta_h, gamma, length, arm_strength, rail_height)
 //construct square part of motor arms with correct angles, lenths
 {
 
+	translate([0, 0, delta_h])
+		//translation to account for arm strength
 	rotate ([0,gamma,0])
- 	translate([-2*arm_strength, 0, 0.75*delta_h])  //factor 0.75 is just an estimate...
+	translate([-arm_strength,0,0])   
+		//translation before rotation so rotation center is correct
+		//square arm is now in the same x- and z position as round arm
 	linear_extrude(height = length, center = false, convexity = 10, twist = 0)
 	square([2* arm_strength, 0.5*height]);
 
-	rotate ([0,-gamma,0])
-	translate([0, 0, 0.75*delta_h])   //factor 0.75 is just an estimate...
-	linear_extrude(height = length, center = false, convexity = 10, twist = 0)
+	translate([0,0, delta_h])
+  	rotate ([0,-gamma,0])
+  	translate([-arm_strength, 0, 0])   //factor 0.75 is just an estimate...
+ 	linear_extrude(height = length, center = false, convexity = 10, twist = 0)
 	square([2* arm_strength, 0.5*height]);
 }
 

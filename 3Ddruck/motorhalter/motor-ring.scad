@@ -21,8 +21,6 @@ module motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_st
 		}
 
 		motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength);
-
-		cut_ring(arm_strength);
 	}
 }
 
@@ -30,12 +28,15 @@ module motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength)
 {
 	translate([0, 0, -0.1])
 	cylinder(h= 10* arm_strength + 0.2, r= motor_radius);
+
 	//cutout for wires
 	translate([0, 0, 2*arm_strength - wire_cutout + 50])   //factor 50 as safetymargin for different arm sizes
 	rotate([0, 90, 0])
 	linear_extrude(height = wire_cutout, center = false, convexity = 10, twist = 0)
 	translate([-2*motor_radius, -motor_radius, 0])
 	square([2*motor_radius +50, 2*motor_radius]);			//factor 50 as safety margin for different arm sizes
+
+	cut_ring(arm_strength);
 }
 
 module cut_ring(arm_strength)

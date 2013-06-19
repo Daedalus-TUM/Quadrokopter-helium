@@ -36,7 +36,7 @@ module motorhalter(angle, heigth, outer_radius, rail_thickness, height, rail_str
 			motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength);
 		}
 
-		translate([rotor_r - motor_radius - ring_thickness, 0, arm_strength])
+		translate([rotor_r - motor_radius - ring_thickness, 0, height/2 - arm_strength])
 		motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength);
 	}
 }

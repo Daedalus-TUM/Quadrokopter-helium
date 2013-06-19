@@ -27,7 +27,7 @@ module motorhalter(angle, heigth, outer_radius, rail_thickness, height, rail_str
 
 		difference()
 		{
-			translate([rail_thickness/2 + rail_strength, 0, height/2 - rail_strength])
+			translate([rail_thickness/2 + rail_strength, 0, height/2])
 			rotate([90, 0, 90])
 			motor_arm(rotor_r, outer_radius, fe, gamma, length, arm_strength, height);
 
@@ -36,7 +36,7 @@ module motorhalter(angle, heigth, outer_radius, rail_thickness, height, rail_str
 			motor_cutout(motor_radius, motor_wires, wire_cutout, arm_strength);
 		}
 
-		translate([rotor_r - motor_radius - ring_thickness, 0, 0])
+		translate([rotor_r - motor_radius - ring_thickness, 0, arm_strength])
 		motor_ring(motor_radius, motor_drill, wire_cutout, ring_thickness, arm_strength);
 	}
 }
@@ -48,8 +48,8 @@ difference()
 {
 motorhalter(angle, height, outer_radius, rail_thickness, height, rail_strength, motor_radius, motor_wires, wire_cutout, arm_strength, rotor_r, outer_radius, fe, gamma, length, ring_thickness, motor_drill);
 
-translate([0, 0, -1])
-cube(size = [220, 220, 2] ,center = true);
+translate([0, 0, -5])
+cube(size = [220, 220, 10] ,center = true);
 }
 
 //test 3d printer parameters for daedalus 3d printer

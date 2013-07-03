@@ -20,7 +20,7 @@ rotor = 51;
 // P
 
 // angle of the ring covered by the rail
-rail_angle = 2;
+rail_angle = 0.5;
 // opening of the rail
 rail_opening = height - 3;
 // strength of rail, hook

@@ -22,15 +22,14 @@ rotor = 51;
 // angle of the ring covered by the rail
 rail_angle = 2;
 // opening of the rail
-rail_opening = height - 2;
-// strength of the rail
-rail_strength = 2;
+rail_opening = height - 3;
+// strength of rail, hook
+strength = 1.2;
 // diameter in the hook, where nylon will go through
 hook_diameter = 1;
 // diameter of hook opening; nylon diameter is 0.25mm
-hook_opening = 0.5;
+hook_opening = 0.3;
 // strength of the hook
-hook_strength = 2;
 
 //from: http://www.thingiverse.com/thing:34027
 module pie_slice(radius, angle, step) {

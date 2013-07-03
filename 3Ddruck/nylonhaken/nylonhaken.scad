@@ -6,7 +6,9 @@ use <haken-nylonhaken.scad>;
 
 module hook_shape(strength, hook_diameter, hook_opening, height, rail_opening, thickness)
 {
-	translate([strength, 0, 0])
+	translate([thickness + 2*strength, 2*strength + height, 0])
+	rotate([0,0,180])
+
 	difference()
 	{
 		union()
@@ -36,7 +38,7 @@ module hook_shape(strength, hook_diameter, hook_opening, height, rail_opening, t
 }
 
 
-module u_rail(rail_angle, outer_radius, thickness, height, strength, hook_diameter, hook_opening, rail_opening, thickness)
+module hook_rail(rail_angle, outer_radius, thickness, height, strength, hook_diameter, hook_opening, rail_opening, thickness)
 {
     translate([-outer_radius - strength - thickness, 0, 0])
     rotate([90, 0, 0])
@@ -46,7 +48,8 @@ module u_rail(rail_angle, outer_radius, thickness, height, strength, hook_diamet
 
 
 
-hook_shape(strength, hook_diameter, hook_opening, height, rail_opening, thickness);
-u_rail(rail_angle, outer_radius, thickness, height, strength);
-//partial_rotate_extrude(rail_angle, outer_radius, 15)hook_shape(strength, hook_diameter, hook_opening, height, rail_opening, thickness);
+//hook_shape(strength, hook_diameter, hook_opening, height, rail_opening, thickness);
+//u_rail(rail_angle, outer_radius, thickness, height, strength);
+
+hook_rail(rail_angle, outer_radius, thickness, height, strength, hook_diameter, hook_opening, rail_opening, thickness);
 

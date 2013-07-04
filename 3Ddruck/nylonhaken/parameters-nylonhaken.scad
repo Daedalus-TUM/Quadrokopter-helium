@@ -7,10 +7,10 @@ $fn=100;
 //radius of the balloon
 outer_radius = 700/2;
 //thickness of carbon ring
-thickness = 1;
+thickness = 1.5;
 //height of the carbon ring (= width of carbon band)
 // increased by 0.5mm to account for printer errors
-height = 10.5;  // 0.94 measured
+height = 12;  // 0.94 measured, but turns out smaller when printing with 10.5
 //rotor radius
 //increased by 1cm from 41 to 51, to give rotors some space
 rotor = 51;

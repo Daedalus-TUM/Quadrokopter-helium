@@ -53,3 +53,13 @@ module hook_rail(rail_angle, outer_radius, thickness, height, strength, hook_dia
 
 hook_rail(rail_angle, outer_radius, thickness, height, strength, hook_diameter, hook_opening, rail_opening, thickness);
 
+
+translate([-20,-6,0])
+rotate([0,0,90])
+hook_rail(rail_angle, outer_radius, thickness, height, strength, hook_diameter, hook_opening, rail_opening, thickness);
+
+translate([-10,-15,0])
+rotate([0,0,45])
+hook_rail(rail_angle, outer_radius, thickness, height, strength, hook_diameter, hook_opening, rail_opening, thickness);
+
+

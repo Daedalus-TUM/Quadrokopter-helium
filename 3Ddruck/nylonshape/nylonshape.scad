@@ -27,18 +27,27 @@ difference()
 
 //screwholder(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter,distance);
 //cutout_screwholder(ring_strength, nut_l, distance);
-nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);
+//nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);
 
 translate([15,15,0])
 rotate([0,0,90])
 nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);
 
 translate([-15,-15,0])
-rotate([0,0,45])
+rotate([0,0,90])
 nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);
 
 translate([-15,15,0])
-rotate([0,0,angle])
+rotate([0,0,90])
 nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);
+
+translate([15,-15,0])
+rotate([0,0,90])
+nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);#
+
+translate([0,0,0])
+rotate([0,0,90])
+nylonshape(screw_diameter, nut, nut_l, ring_strength, rail_strength, diameter, length, angle);
+
 
 

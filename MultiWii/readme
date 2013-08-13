@@ -1,0 +1,16 @@
+MultiWii v2.2
+laeuft aktuell auf dem 16MHz Arduino am runden Kopter
+
+Änderungen zur original Version:
+
+- config.h:
+    Zeile 34: #define QUADX einkommentiert
+    wir fliegen X-Formation
+
+    Zeile 115: #define DROTEK_10DOF_MPU
+    wir verwenden dieses Board als IMU
+
+
+Ausserdem wurden Variablentypen die mit 'prog_' anfangen ('prog_char') so lange durch 'PROGMEM ...' (z.B. const prog_char -> const char PROGMEM) ausgetauscht bis keine Fehler mehr aufgetreten sind.
+In der aktuellsten arduino Version zumindest ruft der 'prog_' typ Fehler hervor (veralteter typ?).
+Die Ersetzung fand eher willkuehrlich statt...
